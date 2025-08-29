@@ -1,0 +1,199 @@
+{
+  "hero": {
+    "name": "Amlan Das",
+    "title": "Financial Professional | Co-Lending & Strategic Partnerships",
+    "tagline": "Driving growth, compliance, and innovation in NBFC co-lending portfolios.",
+    "portraitImage": "assets/portrait.jpg",
+    "backgroundStyle": "gradient",
+    "ctas": [
+      {
+        "label": "Download Profile",
+        "link": "assets/AmlanDasCV.pdf"
+      },
+      {
+        "label": "LinkedIn",
+        "link": "https://www.linkedin.com/in/amlan-das"
+      }
+    ],
+    "theme": "dark"
+  },
+  "timeline": [
+    {
+      "company": "Poonawalla Fincorp Ltd.",
+      "role": "Key Account Relationships – Co-Lending Partnerships",
+      "location": "Pune, India",
+      "startYear": 2022,
+      "endYear": "Present",
+      "logo": "assets/logos/poonawalla.png",
+      "description": "Managing robust co-lending portfolio, streamlining processes, ensuring regulatory compliance.",
+      "highlights": [
+        "Managed ₹13,500+ Cr disbursed across 8 co-lending partners (FY 23-24).",
+        "Led strategic planning & execution of Disb Escrow funding.",
+        "End-to-end ARC transactions worth ₹30+ Cr.",
+        "Successfully handled RBI audits & compliance processes."
+      ]
+    },
+    {
+      "company": "Amazon India",
+      "role": "CS Associate (DP)",
+      "location": "India",
+      "startYear": 2019,
+      "endYear": 2020,
+      "logo": "assets/logos/amazon.png",
+      "description": "Customer service and process optimization.",
+      "highlights": [
+        "Maintained records of complex customer transactions.",
+        "Developed system knowledge base to streamline resolution."
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "label": "Years of Experience",
+      "value": 3,
+      "suffix": "+",
+      "icon": "assets/icons/experience.png",
+      "animation": "counter"
+    },
+    {
+      "label": "Co-lending Portfolio Disbursed",
+      "value": 13500,
+      "suffix": " Cr",
+      "icon": "assets/icons/portfolio.png",
+      "animation": "counter"
+    },
+    {
+      "label": "ARC Transactions Managed",
+      "value": 30,
+      "suffix": " Cr",
+      "icon": "assets/icons/arc.png",
+      "animation": "counter"
+    },
+    {
+      "label": "CKYC Loans Reported",
+      "value": 10000000,
+      "suffix": "+",
+      "icon": "assets/icons/ckyc.png",
+      "animation": "counter"
+    }
+  ],
+  "awards": [
+    {
+      "title": "GoGetter Award",
+      "year": 2023,
+      "issuer": "Poonawalla Fincorp Ltd.",
+      "description": "For outstanding execution in co-lending operations.",
+      "image": "assets/awards/gogetter.png",
+      "type": "award",
+      "carousel": true
+    },
+    {
+      "title": "Anchor Catalyst Award",
+      "year": 2023,
+      "issuer": "Poonawalla Fincorp Ltd.",
+      "description": "Recognized for leadership in process optimization.",
+      "image": "assets/awards/anchor_catalyst.png",
+      "type": "award",
+      "carousel": true
+    }
+  ],
+  "thoughtLeadership": {
+    "quotes": [
+      {
+        "text": "Strong partnerships and compliance are the foundation for scalable financial innovation.",
+        "source": "Self"
+      }
+    ],
+    "articles": [],
+    "speaking": []
+  },
+  "testimonials": [
+    {
+      "name": "Colleague Feedback",
+      "role": "Senior Manager",
+      "organization": "Poonawalla Fincorp",
+      "quote": "Amlan is highly detail-oriented and has been instrumental in streamlining our co-lending processes.",
+      "image": "assets/testimonials/profile1.jpg",
+      "logo": "assets/logos/poonawalla.png",
+      "type": "individual",
+      "style": "card"
+    }
+  ],
+  "businessData": [
+    {
+      "metric": "Portfolio Growth",
+      "values": [8000, 10500, 13500],
+      "unit": "Cr",
+      "type": "line",
+      "visualization": "growth-trend",
+      "source": "internal"
+    },
+    {
+      "metric": "ARC Transactions",
+      "values": [10, 20, 30],
+      "unit": "Cr",
+      "type": "bar",
+      "visualization": "count-up",
+      "source": "internal"
+    }
+  ],
+  "gallery": [
+    {
+      "title": "Panel Discussion at NBFC Forum",
+      "caption": "Speaking on co-lending innovation.",
+      "category": "Speaking",
+      "tags": ["conference", "finance"],
+      "url": "assets/gallery/panel.jpg",
+      "type": "photo",
+      "lightbox": true
+    },
+    {
+      "title": "Team Recognition Event",
+      "caption": "Award ceremony at Poonawalla Fincorp.",
+      "category": "Events",
+      "tags": ["awards"],
+      "url": "assets/gallery/award.jpg",
+      "type": "photo",
+      "lightbox": true
+    }
+  ],
+  "contact": {
+    "channels": [
+      {
+        "type": "email",
+        "value": "amlaan.das2014@gmail.com"
+      },
+      {
+        "type": "linkedin",
+        "value": "https://www.linkedin.com/in/amlan-das"
+      },
+      {
+        "type": "phone",
+        "value": "8334922755"
+      }
+    ],
+    "availability": "Mon–Fri, 9am–6pm IST",
+    "form": true
+  },
+  "footer": {
+    "copyright": "© 2025 Amlan Das. All rights reserved.",
+    "disclaimer": "This website is for professional branding purposes only.",
+    "socialLinks": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/amlan-das"
+      }
+    ],
+    "navigationLinks": [
+      {
+        "label": "Career",
+        "url": "#timeline"
+      },
+      {
+        "label": "Contact",
+        "url": "#contact"
+      }
+    ],
+    "theme": "corporate"
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{hero.name}} — {{hero.title}}</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"/>
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body data-theme="{{hero.theme}}">
+  <!-- =============== HERO =============== -->
+  <header id="hero" class="hero {{hero.backgroundStyle}}">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1 class="hero-name" data-aos="fade-down">{{hero.name}}</h1>
+          <p class="hero-title" data-aos="fade-up">{{hero.title}}</p>
+          <p class="hero-tagline" data-aos="fade-up" data-aos-delay="100">{{hero.tagline}}</p>
+          {{#if (notEmpty hero.ctas)}}
+          <div class="hero-ctas" data-aos="fade-up" data-aos-delay="200">
+            {{#each hero.ctas}}
+              <a class="btn" href="{{this.link}}" target="_blank" rel="noopener">{{this.label}}</a>
+            {{/each}}
+          </div>
+          {{/if}}
+        </div>
+        {{#if hero.portraitImage}}
+        <div class="hero-portrait" data-aos="zoom-in">
+          <img src="{{hero.portraitImage}}" alt="{{hero.name}} portrait"/>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Nav (simple) -->
+  <nav class="topnav">
+    <div class="container">
+      <a href="#timeline">Experience</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#awards">Awards</a>
+      <a href="#thought">Thought Leadership</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#business">Business Data</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- =============== TIMELINE =============== -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Leadership Journey</h2>
+      <div class="timeline">
+        {{#each timeline}}
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-meta">
+            {{#if logo}}<img src="{{logo}}" alt="{{company}} logo" class="company-logo"/>{{/if}}
+            <div>
+              <h3>{{role}} — {{company}}</h3>
+              <p class="muted">{{location}} • {{yearRange startYear endYear}}</p>
+            </div>
+          </div>
+          {{#if description}}<p class="desc">{{description}}</p>{{/if}}
+          {{#if (notEmpty highlights)}}
+          <ul class="highlights">
+            {{#each highlights}}<li>{{this}}</li>{{/each}}
+          </ul>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== ACHIEVEMENTS (Counters) =============== -->
+  <section id="achievements" class="section alt">
+    <div class="container">
+      <h2 data-aos="fade-up">Key Achievements</h2>
+      <div class="cards">
+        {{#each achievements}}
+        <div class="card stat" data-aos="zoom-in">
+          {{#if icon}}<img class="icon" src="{{icon}}" alt="{{label}} icon"/>{{/if}}
+          <div class="stat-value" data-counter data-value="{{value}}" data-suffix="{{suffix}}">{{value}}{{suffix}}</div>
+          <div class="stat-label">{{label}}</div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== AWARDS (Carousel + Lightbox) =============== -->
+  <section id="awards" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Awards & Recognition</h2>
+      <div class="swiper awards-swiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          {{#each awards}}
+          <div class="swiper-slide">
+            <div class="award-card">
+              <a href="{{image}}" data-lightbox="awards" data-title="{{title}} ({{year}}) — {{issuer}}">
+                <img src="{{image}}" alt="{{title}}"/>
+              </a>
+              <h3>{{title}}</h3>
+              <p class="muted">{{year}} • {{issuer}}</p>
+              {{#if description}}<p class="desc">{{description}}</p>{{/if}}
+              {{#if link}}<a class="link" href="{{link}}" target="_blank" rel="noopener">Learn more</a>{{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== THOUGHT LEADERSHIP / PRINCIPLES =============== -->
+  <section id="thought" class="section alt">
+    <div class="container">
+      <h2 data-aos="fade-up">Thought Leadership</h2>
+
+      {{#if (notEmpty thoughtLeadership.quotes)}}
+      <div class="quotes" data-aos="fade-up">
+        {{#each thoughtLeadership.quotes}}
+        <blockquote class="quote">
+          <p>“{{text}}”</p>
+          <cite>— {{#if source}}{{source}}{{else}}Self{{/if}}</cite>
+        </blockquote>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      {{#if (notEmpty thoughtLeadership.articles)}}
+      <div class="articles" data-aos="fade-up">
+        {{#each thoughtLeadership.articles}}
+        <a class="article" href="{{link}}" target="_blank" rel="noopener">
+          <span class="title">{{title}}</span>
+          {{#if publisher}}<span class="muted">• {{publisher}}</span>{{/if}}
+          {{#if publishedOn}}<span class="muted">• {{publishedOn}}</span>{{/if}}
+        </a>
+        {{/each}}
+      </div>
+      {{/if}}
+
+      {{#if (notEmpty thoughtLeadership.speaking)}}
+      <div class="speaking-grid" data-aos="fade-up">
+        {{#each thoughtLeadership.speaking}}
+        <div class="speak-card">
+          {{#if image}}<img src="{{image}}" alt="{{event}}"/>{{/if}}
+          <h3>{{event}}</h3>
+          <p class="muted">{{topic}} • {{year}}</p>
+          {{#if link}}<a class="link" href="{{link}}" target="_blank" rel="noopener">Details</a>{{/if}}
+        </div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- =============== TESTIMONIALS & PRESS =============== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Testimonials & Press</h2>
+
+      <div class="swiper testimonials-swiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          {{#each testimonials}}
+          <div class="swiper-slide">
+            <div class="testimonial-card {{type}}">
+              {{#if image}}<img class="avatar" src="{{image}}" alt="{{name}}"/>{{/if}}
+              <p class="quote">“{{quote}}”</p>
+              <p class="author">
+                {{#if name}}{{name}}{{/if}}
+                {{#if role}} — {{role}}{{/if}}
+                {{#if organization}} ({{organization}}){{/if}}
+              </p>
+              {{#if link}}<a class="link" href="{{link}}" target="_blank" rel="noopener">Source</a>{{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      {{#if (notEmpty press)}}
+      <div class="press-ticker" data-aos="fade-up">
+        <div class="track">
+          {{#each press}}
+            <a href="{{link}}" target="_blank" rel="noopener"><img src="{{logo}}" alt="Press logo"/></a>
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- =============== BUSINESS DATA (Charts) =============== -->
+  <section id="business" class="section alt">
+    <div class="container">
+      <h2 data-aos="fade-up">Business Data Highlights</h2>
+      <div class="charts-grid">
+        {{#each businessData}}
+        <div class="chart-card" data-aos="zoom-in">
+          <h3>{{metric}}</h3>
+          <canvas class="biz-chart"
+                  data-metric="{{metric}}"
+                  data-values='{{json values}}'
+                  data-type="{{type}}"
+                  data-unit="{{unit}}"
+                  data-visual="{{visualization}}"></canvas>
+          {{#if source}}<p class="muted small">Source: {{source}}</p>{{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== GALLERY (Filterable + Lightbox) =============== -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Gallery & Media</h2>
+
+      <div class="filters" data-aos="fade-up">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Events">Events</button>
+        <button class="filter-btn" data-filter="Media">Media</button>
+        <button class="filter-btn" data-filter="Speaking">Speaking</button>
+      </div>
+
+      <div class="gallery-grid" data-aos="fade-up">
+        {{#each gallery}}
+        <a class="gallery-item"
+           href="{{url}}"
+           data-lightbox="gallery"
+           data-title="{{title}} — {{caption}}"
+           data-category="{{category}}">
+          <img src="{{url}}" alt="{{title}}"/>
+          <span class="badge">{{category}}</span>
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== CONTACT =============== -->
+  <section id="contact" class="section alt">
+    <div class="container">
+      <h2 data-aos="fade-up">Let’s Connect</h2>
+      <div class="contact-grid" data-aos="fade-up">
+        {{#each contact.channels}}
+          <a class="contact-chip" href="{{#eq type 'email'}}mailto:{{/eq}}{{value}}" target="{{#eq type 'email'}}_self{{/eq}}{{#unless (eq type 'email')}}_blank{{/unless}}" rel="noopener">
+            <span class="type">{{type}}</span>
+            <span class="val">{{value}}</span>
+          </a>
+        {{/each}}
+      </div>
+      {{#if contact.availability}}
+        <p class="muted">Availability: {{contact.availability}}</p>
+      {{/if}}
+
+      {{#if contact.form}}
+      <form class="contact-form" data-aos="fade-up" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Your Email" required/>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button class="btn" type="submit">Send</button>
+        <p class="muted small">(* Static demo form — wire to a service like Formspree/Netlify Forms when deploying.)</p>
+      </form>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          {{#if footer.disclaimer}}<p class="muted small">{{footer.disclaimer}}</p>{{/if}}
+          {{#if footer.copyright}}<p class="muted small">{{footer.copyright}}</p>{{/if}}
+        </div>
+        <div class="footer-links">
+          {{#if (notEmpty footer.navigationLinks)}}
+            {{#each footer.navigationLinks}}
+              <a href="{{url}}">{{label}}</a>
+            {{/each}}
+          {{/if}}
+          {{#if (notEmpty footer.socialLinks)}}
+            {{#each footer.socialLinks}}
+              <a href="{{url}}" target="_blank" rel="noopener">{{platform}}</a>
+            {{/each}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- App JS -->
+  <script src="assets/script.js"></script>
+</body>
+</html>

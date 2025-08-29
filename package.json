@@ -1,0 +1,14 @@
+{
+  "name": "cxo-static-site-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "node scripts/build.js config/sample.json output/demo",
+    "build:custom": "node scripts/build.js <CONFIG_PATH> <OUTPUT_DIR>"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "handlebars": "^4.7.8"
+  }
+}
